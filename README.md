@@ -48,7 +48,7 @@ docker compose up airflow-init
 
 ```bash
 # Utiliser le fichier docker-compose inclus dans ce dossier (Airflow/)
-docker compose -f  up -d
+docker compose  up -d
 ```
 
 4) Vérifier les services :

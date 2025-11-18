@@ -41,7 +41,7 @@ default_args = {
 }
 
 with DAG(
-    dag_id='demo_etl_pipeline',
+    dag_id='demo_etl_pipeline2',
     default_args=default_args,
     description='Pipeline ETL de démonstration',
     schedule='@daily',
@@ -66,11 +66,5 @@ with DAG(
         python_callable=load_data,
     )
     
-    # Tâche de notification
-    notify = BashOperator(
-        task_id='notify',
-        bash_command='echo "✅ Pipeline ETL terminé avec succès!"',
-    )
-    
     # Dépendances
-    extract >> transform >> load >> notify
+    extract >> transform >> load
